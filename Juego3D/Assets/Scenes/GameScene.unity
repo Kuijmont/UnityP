@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbaa6f74a1bf6a54699bc2a31facab63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ps: {fileID: 1251022661300192, guid: b02959f1851342845a66df8ffe8836c1, type: 3}
+  ps: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   menu: {fileID: 2055387361}
   tl: {fileID: 1139741838}
   go: {fileID: 1902583990}
@@ -1072,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &668917321
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,13 +1080,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668917320}
-  m_LocalRotation: {x: 0, y: 0, z: 0.3674997, w: 0.93002367}
+  m_LocalRotation: {x: -0.29603717, y: -0.65538657, z: 0.6421542, w: 0.26545897}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5029637, y: 0.6195702, z: 0.3739473}
+  m_LocalScale: {x: 0.5, y: -0.25, z: 0.5}
   m_Children: []
   m_Father: {fileID: 476368683}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 43.123}
+  m_LocalEulerAnglesHint: {x: 43.2, y: -92.7, z: 90}
 --- !u!65 &668917322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1095,10 +1095,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668917320}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &668917323
 MeshRenderer:
@@ -1664,6 +1664,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6979735695691521906, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_Text
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979735696746668154, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_Text
+      value: Restart!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979735696845789541, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979735696845789541, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5231711
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979735696144924608, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6979735695888162378, guid: 7c147ef48a65f264c91666ae6d9fed28,
+        type: 3}
+      propertyPath: m_Text
+      value: Your Score
+      objectReference: {fileID: 0}
     - target: {fileID: 6979735696999558509, guid: 7c147ef48a65f264c91666ae6d9fed28,
         type: 3}
       propertyPath: m_Name
@@ -1779,40 +1809,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6979735696845789541, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979735696845789541, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.5231711
-      objectReference: {fileID: 0}
     - target: {fileID: 6979735695533527601, guid: 7c147ef48a65f264c91666ae6d9fed28,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Reset
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979735696144924608, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979735695691521906, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_Text
-      value: Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979735695888162378, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_Text
-      value: Your Score
-      objectReference: {fileID: 0}
-    - target: {fileID: 6979735696746668154, guid: 7c147ef48a65f264c91666ae6d9fed28,
-        type: 3}
-      propertyPath: m_Text
-      value: Restart!
       objectReference: {fileID: 0}
     - target: {fileID: 6979735697242627265, guid: 7c147ef48a65f264c91666ae6d9fed28,
         type: 3}
