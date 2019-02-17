@@ -5,25 +5,42 @@ using UnityEngine;
 public class GolfBall : MonoBehaviour
 {
     [SerializeField]
-    private float force;
+    private float force = 100;
+    [SerializeField]
+    private float maxForce = 500;
+    [SerializeField]
+    private float minForce = 50;
+    [SerializeField]
+    private float forceChangeAmount = 25;
+
+
     private Vector2 direction;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        Camera.main.ScreenToWorldPoint(mousePosition);
-
-        if (Input.GetMouseButtonDown(0))
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction = (Vector2)(mousePosition - transform.position);
+        if (Input.GetMouseButton(0) && rb.velocity == Vector2.zero)
         {
-            rb.AddForce(mousePosition * force);
+            rb.AddForce(direction * force);
         }
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && force < maxForce)
+        {
+            force += forceChangeAmount;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0 && force > minForce)
+        {
+            force -= forceChangeAmount;
+        }
+
     }
 }
