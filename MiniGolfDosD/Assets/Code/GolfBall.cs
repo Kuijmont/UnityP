@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GolfBall : MonoBehaviour
 {
@@ -13,8 +14,6 @@ public class GolfBall : MonoBehaviour
     [SerializeField]
     private float forceChangeAmount = 25;
 
-
-    private Vector2 direction;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -26,10 +25,11 @@ public class GolfBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = (Vector2) (mousePosition - transform.position);
+ 
         if (Input.GetMouseButton(0) && rb.velocity == Vector2.zero)
         {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (Vector2) (mousePosition - transform.position);
             rb.AddForce(direction * force);
         }
 
@@ -43,4 +43,18 @@ public class GolfBall : MonoBehaviour
         }
 
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Hole")
+        {
+            rb.velocity = Vector2.zero;
+            if (collision.GetComponent<Hole>().GetNextScene()!= ""){
+                SceneManager.LoadScene(collision.GetComponent<Hole>().GetNextScene());
+            }
+            
+            Debug.Log("Score!");
+        }
+    }
+
 }
