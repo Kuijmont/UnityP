@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GolfBall : MonoBehaviour
 {
@@ -14,23 +15,35 @@ public class GolfBall : MonoBehaviour
     [SerializeField]
     private float forceChangeAmount = 25;
 
+    [SerializeField]
+    private Text powerPercent;
+
+    [SerializeField]
+    private Text hitsText;
+
+    private int hits;
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        hits = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
- 
+
+        powerPercent.text = (((force / maxForce) * 100).ToString()+ " %");
+        hitsText.text = hits.ToString();
+
         if (Input.GetMouseButton(0) && rb.velocity == Vector2.zero)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (Vector2) (mousePosition - transform.position);
             rb.AddForce(direction * force);
+            hits++;
         }
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0 && force < maxForce)
@@ -41,7 +54,6 @@ public class GolfBall : MonoBehaviour
         {
             force -= forceChangeAmount;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collision)
