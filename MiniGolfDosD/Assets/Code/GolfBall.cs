@@ -16,9 +16,6 @@ public class GolfBall : MonoBehaviour
     private float forceChangeAmount = 25;
 
     [SerializeField]
-    private Text powerPercent;
-
-    [SerializeField]
     private Text hitsText;
 
     private int hits;
@@ -34,8 +31,6 @@ public class GolfBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        powerPercent.text = (((force / maxForce) * 100).ToString()+ " %");
         hitsText.text = hits.ToString();
 
         if (Input.GetMouseButton(0) && rb.velocity == Vector2.zero)

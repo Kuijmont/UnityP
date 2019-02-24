@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 4f79f892879aa5f4fae5ce6b98893a1f
+  - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 7bb4ab8638a4bee42a5942c07c84ca3f
   - enabled: 1
     path: Assets/Scenes/Hole1.unity
     guid: 7a4773a0da2121f4b957f1f6e7620da5
+  - enabled: 1
+    path: Assets/Scenes/Hole2.unity
+    guid: 42aa9600866666b48b83a97c34cbb604
+  - enabled: 1
+    path: Assets/Scenes/Hole3.unity
+    guid: bb5c96c7ca9273249b32986150292a7e
   m_configObjects: {}
